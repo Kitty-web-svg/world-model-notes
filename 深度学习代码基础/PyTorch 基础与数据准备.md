@@ -33,7 +33,7 @@ Python
 class ShapeDataset(Dataset):
 	# 这行代码就是给图片设定了一个“默认宽高为 64 像素”的规矩。
     def __init__(self, n_samples=1000, img_size=64, seed=42):
-        # 初始化：在这里生成了 1000 张随机形状的图片
+        # 初始化：在这里生成了 1000 张随机形状的图片，画板大小一致，但是里面图片是随机
         self.images = torch.stack([make_shape_image(img_size) for _ in range(n_samples)])
 
     def __len__(self):
