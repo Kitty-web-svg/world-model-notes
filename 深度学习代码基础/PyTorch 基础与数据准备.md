@@ -1,3 +1,4 @@
+那我们就采取最实用的路线，直接从 **“课时 1：PyTorch 基础与数据准备”** 开始！与其干讲理论，不如直接拿你刚才提供的代码来“解剖”。
 
 在这一课里，我们只看你代码的前半部分。你要理解三个核心组件：**Device（设备）**、**Dataset（数据集）** 和 **DataLoader（数据加载器）**。
 
@@ -30,6 +31,7 @@ Python
 
 ```
 class ShapeDataset(Dataset):
+	# 这行代码就是给图片设定了一个“默认宽高为 64 像素”的规矩。
     def __init__(self, n_samples=1000, img_size=64, seed=42):
         # 初始化：在这里生成了 1000 张随机形状的图片
         self.images = torch.stack([make_shape_image(img_size) for _ in range(n_samples)])
